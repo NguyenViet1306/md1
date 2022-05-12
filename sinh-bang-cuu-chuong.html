@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let bbc , i , j
+    bbc = "<table border='0' width='300' cellspacing='5' cellpadding='6'>"
+    i = j = 1
+    while (i < 10) {
+        bbc = bbc + "<tr>"
+        while (j < 10) {
+            bbc = bbc + "<td>" + i + "x" +  j + "=" + i*j + "</td>"
+            j++
+        }
+        bbc = bbc + "</tr>"
+        j = 1
+        i++
+    }
+    bbc = bbc + "</table>"
+    document.write(bbc)
+</script>
+</html>
