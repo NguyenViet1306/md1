@@ -7,31 +7,37 @@
 <body>
 <table>
     <tr>
-        <th>Amount</th>
-        <th>From Currency</th>
-        <th>To Currency</th>
-        <th></th>
+        <td>Amount</td>
+        <td>From</td>
+        <td>To</td>
+        <td></td>
     </tr>
     <tr>
-        <td><input type="text" id="sotien1"></td>
+        <td><input type="text" id="money"></td>
         <td>
-            <lable for="conty"></lable>
-            <select id="form">
-                <option value="">USD</option>
-                <option value="">VietNam</option>
+            <select id="from">
+                <option value="1">USD</option>
+                <option value="23000">VND</option>
             </select>
-            <!--                    <option>CKZ</option>-->
-            <!--                    <option>EUR</option></select></td>-->
-        <td><label for="contry" id="sotien2"></label>
+        </td>
+        <td>
             <select id="to">
-                <option value="">VietNam</option>
-                <option value="">USD</option>
+                <option value="1">USD</option>
+                <option value="23000">VND</option>
             </select>
-            <!--                    <option>CKZ</option>-->
-            <!--                    <option>EUR</option></select></td>-->
-        <td><input type="button" value="Convert" onclick="doitien()"></td>
+        </td>
+        <td><button onclick="changeMoney()">Convert</button></td>
     </tr>
 </table>
+<p id="result"></p>
 </body>
-<script src="bien-kieu-du-lieu.js"></script>
+<script>
+    function changeMoney() {
+        let money = parseFloat(document.getElementById("money").value)
+        let from = parseFloat(document.getElementById("from").value)
+        let to = parseFloat(document.getElementById("to").value)
+        let moneyChange = money * to / from
+        document.getElementById("result").innerHTML = "Result: " + moneyChange
+    }
+</script>
 </html>
